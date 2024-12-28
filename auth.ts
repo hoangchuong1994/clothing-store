@@ -53,8 +53,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   ],
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
-      console.log(auth?.user);
       const isLoggedIn = !!auth?.user;
+
       const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
       const isAuthRoute = authRoutes.includes(nextUrl.pathname);
       const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
@@ -74,7 +74,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             new URL(DEFAULT_ADMIN_SIGN_IN_REDIRECT, nextUrl)
           );
         }
-
         if (isLoggedIn && auth.user.role === "USER") {
           return NextResponse.redirect(new URL("/", nextUrl));
         }
