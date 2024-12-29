@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
 import prisma from "@/lib/prisma";
-import { UserRole } from "@prisma/client";
 import { NextResponse } from "next/server";
 import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
@@ -14,6 +13,7 @@ import {
   authRoutes,
   publicRoutes,
 } from "@/routes";
+import { UserRole } from "@prisma/client";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   pages: {
@@ -100,25 +100,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
       return true;
     },
-    jwt: async ({ token, session }) => {
-      if (session && token.sub) {
-        const exitingUser = await prisma.user.findUnique({
-          where: {
-            id: token.sub,
-          },
-        });
-
-        if (!exitingUser) return token;
-        return {
-          ...token,
-          id: exitingUser.id,
-          role: exitingUser.role,
-        };
+    jwt: async ({ token, user }) => {
+      if (user) {
+        token.role = user.role;
       }
       return token;
     },
     session: async ({ session, token }) => {
-      if (token.sub) {
+      if (token.sub && token.role) {
         session.user.id = token.sub;
         session.user.role = token.role as UserRole;
         return session;
