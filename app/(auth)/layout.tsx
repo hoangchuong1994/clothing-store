@@ -15,9 +15,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="bg-slate-300">
             <div className="container m-auto">
                 <div className="flex min-h-screen items-center justify-center">
-                    <div className="w-full p-4 max-xl:max-w-md xl:mx-10 xl:grid xl:grid-cols-2">
-                        <div className="relative hidden bg-gradient-to-r from-emerald-300 to-violet-300 xl:block xl:overflow-hidden xl:rounded-l-3xl">
-                            <div className="absolute inset-0 rounded-lg">
+                    <div className="min-h-[740px] w-full p-4 max-xl:max-w-md xl:mx-10 xl:grid xl:grid-cols-2">
+                        <div className="hidden bg-gradient-to-r from-emerald-300 to-violet-300 xl:block xl:overflow-hidden xl:rounded-l-3xl">
+                            <div className="relative h-full rounded-lg">
                                 <Image
                                     alt="background auth"
                                     src={background}
