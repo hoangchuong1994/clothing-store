@@ -1,7 +1,9 @@
 import React from 'react';
 
-const DashboardPage = () => {
-    return <h1>DashboardPage</h1>;
-};
-
-export default DashboardPage;
+export default function page() {
+    return (
+        <div className="w-full px-2 py-4">
+            <h1>admin page</h1>
+        </div>
+    );
+}

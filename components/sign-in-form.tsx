@@ -85,7 +85,7 @@ export default function SignInForm() {
         <Auth
             headerLabel="Sign In"
             footerLabel="Do not have an account ? "
-            footerHref="/signUp"
+            footerHref="/sign-up"
             className="h-full xl:rounded-none"
         >
             <Form {...form}>

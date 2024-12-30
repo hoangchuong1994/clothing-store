@@ -49,7 +49,7 @@ export default function NewVerificationPage() {
                     {success ? (
                         <>
                             <FormSuccess message={success} />
-                            <Link href={'/signIn'} className="my-4 block text-center">
+                            <Link href={'/sign-in'} className="my-4 block text-center">
                                 Click <span className="border-b-2 border-b-blue-800 text-blue-600">here</span> to return
                                 to the signIn page
                             </Link>
