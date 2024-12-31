@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="bg-slate-300">
             <div className="container m-auto">
                 <div className="flex min-h-screen items-center justify-center">
-                    <div className="h-[720px] w-full max-xl:max-w-md xl:mx-10 xl:grid xl:grid-cols-2 xl:p-4">
+                    <div className="h-[720px] w-full max-xl:max-w-md xl:mx-10 xl:grid xl:grid-cols-2 xl:py-4">
                         <div className="hidden bg-gradient-to-r from-emerald-300 to-violet-300 xl:block xl:overflow-hidden xl:rounded-l-3xl">
                             <div className="relative h-full rounded-lg">
                                 <Image
@@ -29,7 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                                 />
                             </div>
                         </div>
-                        <div className="h-full max-xl:px-4 xl:overflow-hidden xl:rounded-r-3xl">
+                        <div className="h-full max-xl:p-4 xl:overflow-hidden xl:rounded-r-3xl">
                             <Suspense fallback={<Loading />}>{children}</Suspense>
                         </div>
                     </div>
