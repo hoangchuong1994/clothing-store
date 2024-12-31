@@ -1,5 +1,5 @@
 import { LoadingSkeletonAuth } from '@/components/loading-skeleton';
 
 export default function Loading() {
-    return <LoadingSkeletonAuth className="h-full w-[auto] bg-white" />;
+    return <LoadingSkeletonAuth className="rounded-xl bg-white" />;
 }
