@@ -61,7 +61,14 @@ export default defineConfig([
     },
   },
 
-  prettier, // ✅ MUST be last
+  {
+    files: ['scripts/**/*.ts', 'prisma/**/*.ts'],
+    rules: {
+      'no-console': 'off',
+    },
+  },
 
-  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
+  prettier, // MUST be last
+
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'generated/**']),
 ]);

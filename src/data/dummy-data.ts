@@ -259,6 +259,22 @@ export const PRODUCTS: Product[] = [
     rating: 4.4,
     reviewCount: 94,
   },
+  {
+    id: 13,
+    name: 'Heavyweight Pullover Hoodie',
+    price: 109.99,
+    image: 'https://images.pexels.com/photos/3622622/pexels-photo-3622622.jpeg',
+    images: ['https://images.pexels.com/photos/3622622/pexels-photo-3622622.jpeg'],
+    category: 'Hoodies',
+    description:
+      'Heavyweight 400gsm pullover hoodie with kangaroo pocket. Double-stitched seams for durability. Relaxed fit.',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    colors: ['Black', 'Charcoal', 'Forest Green'],
+    tags: ['heavyweight', 'durable', 'relaxed-fit'],
+    badges: ['New'],
+    rating: 4.7,
+    reviewCount: 42,
+  },
 ];
 
 // ============ CATEGORIES DATA ============
